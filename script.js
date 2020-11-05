@@ -16,7 +16,7 @@ attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreet
 }).addTo(map);
 
 // Edit to upload GeoJSON data file from your local directory
-$.getJSON("aom.geojson", function (data) {
+$.getJSON("https://www.geograndest.fr/geoserver/region-grand-est/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=region-grand-est%3Aaomd_reseaux&maxFeatures=50&outputFormat=application%2Fjson&srsName=EPSG:4326", function (data) {
   geoJsonLayer = L.geoJson(data, {
     style: style,
     onEachFeature: onEachFeature
