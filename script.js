@@ -31,15 +31,15 @@ function getColor(d) {
          d > 500  ? '#E31A1C' :
          d > 200  ? '#FC4E2A' :
          d > 100  ? '#FD8D3C' :
-         d > 50   ? '#FEB24C' :
-         d > 30   ? '#FED976' :
+         d > 1   ? '#FEB24C' :
+         d > 0   ? '#FED976' :
                     '#FFEDA0';
 }
 
 // Edit the getColor property to match data column header in your GeoJson file
 function style(feature) {
   return {
-    fillColor: getColor(feature.properties.density2010),
+    fillColor: getColor(feature.properties.a_publier_producteur_data),
     weight: 1,
     opacity: 1,
     color: 'black',
@@ -85,7 +85,7 @@ info.onAdd = function (map) {
 // Edit info box text and variables (such as props.density2010) to match those in your GeoJSON data
 info.update = function (props) {
   this._div.innerHTML = '<h4>Connecticut Town<br />Population density 2010</h4>' +  (props ?
-    '<b>' + props.town + '</b><br />' + props.density2010 + ' people / mi<sup>2</sup>'
+    '<b>' + props.nom_abr + '</b><br />' + props.density2010 + ' people / mi<sup>2</sup>'
     : 'Hover over a town');
 };
 info.addTo(map);
