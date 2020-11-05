@@ -1,8 +1,8 @@
 // Edit the center point and zoom level
 var map = L.map('map', {
   center: [49, 6],
-  zoom: 9,
-  scrollWheelZoom: false
+  zoom: 8,
+  scrollWheelZoom: true
 });
 
 // Edit links to your GitHub repo and data source credit
@@ -32,7 +32,7 @@ function getColor(d) {
          d > 200  ? '#FC4E2A' :
          d > 100  ? '#FD8D3C' :
          d > 1   ? '#FEB24C' :
-         d > 0   ? '#FED976' :
+         d > 0   ? '#BD0026' :
                     '#FFEDA0';
 }
 
@@ -84,9 +84,8 @@ info.onAdd = function (map) {
 
 // Edit info box text and variables (such as props.density2010) to match those in your GeoJSON data
 info.update = function (props) {
-  this._div.innerHTML = '<h4>Connecticut Town<br />Population density 2010</h4>' +  (props ?
-    '<b>' + props.nom_abr + '</b><br />' + props.density2010 + ' people / mi<sup>2</sup>'
-    : 'Hover over a town');
+  this._div.innerHTML = '<h4>AOM</h4>' +  (props ?
+    '<b>' + props.nom_abr + '</b><br />' + ' intégration ' + props.date_d_integration + + '</b><br />' + ' offre ' + props.debut_de_validite + '>' + props.fin_de_validite);
 };
 info.addTo(map);
 
