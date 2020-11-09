@@ -85,10 +85,16 @@ info.onAdd = function (map) {
 // Edit info box text and variables (such as props.density2010) to match those in your GeoJSON data
 info.update = function (props) {
   this._div.innerHTML = (props
-    ? '<h4>AOM</h4>' + '<b>' + props.nom_abr + '</b><br />'
+    ? '<b>' + props.nom_abr + '</b><br />' + value + '</b><br />'
+      + (props.fin_de_validite ? 'Most recent data: ' + props.fin_de_validite : '')
+    : 'Hover over nations');
+    
+    
+    //(props
+   // ? '<h4>AOM</h4>' + '<b>' + props.nom_abr + '</b><br />'
 //    + ' intégration ' + props.date_d_integration + '<br />'
   //  + ' offre ' + props.debut_de_validite + ' vers ' + props.fin_de_validite
-  ); 
+//  ); 
 };
 info.addTo(map);
 
