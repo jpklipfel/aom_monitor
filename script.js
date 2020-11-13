@@ -84,9 +84,7 @@ info.onAdd = function (map) {
 
 // Edit info box text and variables (such as props.density2010) to match those in your GeoJSON data
 info.update = function (props) {
-  var value = props;
-  this._div.innerHTML = (props
-                         ?'<h4> AOM' + props.nom_abr + '</h4><br />');
+  this._div.innerHTML = (props?'<h4> AOM' + props.nom_abr + '</h4><br />': 'Hover over nations');
     //(props
    // ? '<h4>AOM</h4>' + '<b>' + props.nom_abr + '</b><br />'
 //    + ' intégration ' + props.date_d_integration + '<br />'
