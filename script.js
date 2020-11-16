@@ -31,8 +31,8 @@ function getColor(d) {
   //var dateStr = JSON.parse(d);
   var dateSIM = new Date(d);
   console.log(dateSIM);
-  return d > date ? '#800026' :
-         d < date ? '#FEB24C' :
+  return dateSIM > date ? '#800026' :
+         dateSIM < date ? '#FEB24C' :
                     '#FFFFFF';
 }
 
