@@ -28,8 +28,8 @@ $.getJSON("https://www.geograndest.fr/geoserver/region-grand-est/ows?service=WFS
 function getColor(d) {
   var date = new Date();
   console.log(date);
-  var dateStr = JSON.parse(d);
-  var dateSIM = new Date(dateStr);
+  //var dateStr = JSON.parse(d);
+  var dateSIM = new Date(d);
   console.log(dateSIM);
   return d > date ? '#800026' :
          d < date ? '#FEB24C' :
