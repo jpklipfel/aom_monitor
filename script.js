@@ -29,7 +29,7 @@ function getColor(d) {
   var date = new Date();
   return d > date ? '#800026' :
          d < date ? '#FEB24C' :
-                    '#FFEDA0';
+                    '#FFFFFF';
 }
 
 // Edit the getColor property to match data column header in your GeoJson file
