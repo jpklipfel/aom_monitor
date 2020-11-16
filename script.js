@@ -26,20 +26,16 @@ $.getJSON("https://www.geograndest.fr/geoserver/region-grand-est/ows?service=WFS
 // Edit ranges and colors to match your data; see http://colorbrewer.org
 // Any values not listed in the ranges below displays as the last color
 function getColor(d) {
-  return d > 5000 ? '#800026' :
-         d > 1000 ? '#BD0026' :
-         d > 500  ? '#E31A1C' :
-         d > 200  ? '#FC4E2A' :
-         d > 100  ? '#FD8D3C' :
-         d > 1   ? '#FEB24C' :
-         d > 0   ? '#BD0026' :
+  var date = new Date();
+  return d > date ? '#800026' :
+         d < date ? '#FEB24C' :
                     '#FFEDA0';
 }
 
 // Edit the getColor property to match data column header in your GeoJson file
 function style(feature) {
   return {
-    fillColor: getColor(feature.properties.a_publier_producteur_data),
+    fillColor: getColor(feature.properties.fin_de_validite),
     weight: 1,
     opacity: 1,
     color: 'black',
@@ -92,12 +88,7 @@ info.update = function (props) {
     ? '<b>' + props.nom_abr + '</b><br />' + value + '</b><br />'
       + (props.fin_de_validite ? 'Fin de validité: ' + props.fin_de_validite : '')
     : 'Hover over nations');
-  
-    //(props
-   // ? '<h4>AOM</h4>' + '<b>' + props.nom_abr + '</b><br />'
-//    + ' intégration ' + props.date_d_integration + '<br />'
-  //  + ' offre ' + props.debut_de_validite + ' vers ' + props.fin_de_validite
-//  ); 
+
 };
 info.addTo(map);
 
