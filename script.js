@@ -27,7 +27,7 @@ $.getJSON("https://www.geograndest.fr/geoserver/region-grand-est/ows?service=WFS
 // Edit ranges and colors to match your data; see http://colorbrewer.org
 // Any values not listed in the ranges below displays as the last color
 function getColor(d) {
-//  var date = new Date();
+  var date = new Date();
   var date_fv_SIM = new Date(d);
   var date1m = new Date(date.setMonth(date.getMonth()+2));
   return date_fv_SIM > date1m ? '#83e60b' :
