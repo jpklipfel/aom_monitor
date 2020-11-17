@@ -11,8 +11,8 @@ map.attributionControl
 map.attributionControl.addAttribution('Population data &copy; <a href="http://census.gov/">US Census</a>');
 
 // Basemap layer
-new L.tileLayer('http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
-attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+new L.tileLayer('https://tile.thunderforest.com/transport/{z}/{x}/{y}.png?apikey=3c06693aff7242e297428b55bf38e913', {
+attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://www.thunderforest.com">Maps © Thunderforest</a>'
 }).addTo(map);
 
 // Edit to upload GeoJSON data file from your local directory
@@ -51,7 +51,7 @@ function style(feature) {
     weight: 1,
     opacity: 1,
     color: 'black',
-    fillOpacity: 0.7
+    fillOpacity: 0.5
   };
 }
 
@@ -62,7 +62,7 @@ function highlightFeature(e) {
   layer.setStyle({
     weight: 4,
     color: 'black',
-    fillOpacity: 0.7
+    fillOpacity: 0.5
   });
   info.update(layer.feature.properties);
 }
@@ -97,8 +97,8 @@ info.update = function (props) {
   var value = props && props.date_d_integration ? props.date_d_integration + '%' : 'No data'
 
   this._div.innerHTML +=  (props
-    ? '<b>' + props.nom_abr + '</b><br />' + 'Date intégration :' + value + '</b><br />'
-      + (props.fin_de_validite ? 'Fin de validité: ' + props.fin_de_validite : '')
+    ? '<b>' + props.nom_abr + '</b><br />' + 'Date import: ' + value + '</b><br />'
+      + (props.fin_de_validite ? 'Fin de validité: <b>' + props.fin_de_validite : '</b>')
     : 'Hover over nations');
 
 };
