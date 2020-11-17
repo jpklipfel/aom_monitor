@@ -18,6 +18,7 @@ attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreet
 // Edit to upload GeoJSON data file from your local directory
 $.getJSON("https://www.geograndest.fr/geoserver/region-grand-est/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=region-grand-est%3Aaomd_reseaux&maxFeatures=50&outputFormat=application%2Fjson&srsName=EPSG:4326", function (data) {
   geoJsonLayer = L.geoJson(data, {
+    filter: network_filter,
     style: style,
     onEachFeature: onEachFeature
   }).addTo(map);
@@ -34,6 +35,10 @@ function getColor(d) {
   return dateSIM > date ? '#800026' :
          dateSIM < date ? '#FEB24C' :
                     '#FFFFFF';
+}
+//filtering network
+function network_filter(feature) {
+  if (feature.properties.nom_ao === "Conseil Régional Grand Est") return true
 }
 
 // Edit the getColor property to match data column header in your GeoJson file
