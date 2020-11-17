@@ -38,7 +38,7 @@ function getColor(d) {
 }
 //filtering network
 function network_filter(feature) {
-  if (feature.properties.nom_ao === "Conseil Régional Grand Est") return true
+  if (feature.properties.nom_ao != "Conseil Régional Grand Est") return true
 }
 
 // Edit the getColor property to match data column header in your GeoJson file
