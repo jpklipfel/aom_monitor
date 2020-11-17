@@ -29,9 +29,9 @@ $.getJSON("https://www.geograndest.fr/geoserver/region-grand-est/ows?service=WFS
 function getColor(d) {
 //  var date = new Date();
   var date_fv_SIM = new Date(d);
-  var date1m = new Date(date.setMonth(date.getMonth()+1));
-  return date_fv_SIM > date1m ? '#83e60b' :
-         date_fv_SIM < date1m ? '#e6aa0b' :
+  var date2m = new Date(date.setMonth(date.getMonth()+2));
+  return date_fv_SIM > date2m ? '#83e60b' :
+         date_fv_SIM < date2m ? '#e6aa0b' :
       //   date1m > date_fv_SIM < date ? '#e99813' :
          '#eb1f3e';
 }
