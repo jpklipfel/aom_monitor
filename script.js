@@ -97,7 +97,7 @@ info.update = function (props) {
   var value = props && props.date_d_integration ? props.date_d_integration + '%' : 'No data'
 
   this._div.innerHTML +=  (props
-    ? '<b>' + props.nom_abr + '</b><br />' + value + '</b><br />'
+    ? '<b>' + props.nom_abr + '</b><br />' + 'Date intégration :' + value + '</b><br />'
       + (props.fin_de_validite ? 'Fin de validité: ' + props.fin_de_validite : '')
     : 'Hover over nations');
 
@@ -110,7 +110,7 @@ var legend = L.control({position: 'bottomright'});
 legend.onAdd = function (map) {
   var div = L.DomUtil.create('div', 'info legend'),
     grades = [0, 30, 50],
-    labels = ['ok', '2mois', 'nodata'],
+    labels = ['maj offre'],
     from, to;
   for (var i = 0; i < grades.length; i++) {
     from = grades[i];
@@ -122,7 +122,7 @@ legend.onAdd = function (map) {
   div.innerHTML = labels.join('<br>');
   return div;
 };
-legend.addTo(map);
+//legend.addTo(map);
 
 // Use in info.update if GeoJSON data contains null values, and if so, displays "--"
 function checkNull(val) {
