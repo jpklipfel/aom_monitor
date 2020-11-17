@@ -29,11 +29,11 @@ $.getJSON("https://www.geograndest.fr/geoserver/region-grand-est/ows?service=WFS
 function getColor(d) {
   var date = new Date();
   var date_fv_SIM = new Date(d);
-  var date1m = new Date(date.setMonth(date.getMonth()+2));
-  var nodata = checkNull(d);
-  return date_fv_SIM > date1m ? '#83e60b' :
-         date < date_fv_SIM < date1m ? '#e6aa0b' :
-         nodata == '--' ? '#e6220b':
+//  var date1m = new Date(date.setMonth(date.getMonth()+2));
+ // var nodata = checkNull(d);
+  return date_fv_SIM > date ? '#83e60b' :
+         date_fv_SIM < date ? '#e6220b' :
+      //   nodata == '--' ? '#e6220b':
       //   date1m > date_fv_SIM < date ? '#e99813' :
       //   date_fv_SIM < date ? '#eb1f3e':
                               '#8f9695';
