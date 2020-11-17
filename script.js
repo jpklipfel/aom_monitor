@@ -28,14 +28,14 @@ $.getJSON("https://www.geograndest.fr/geoserver/region-grand-est/ows?service=WFS
 // Any values not listed in the ranges below displays as the last color
 function getColor(d) {
   var date = new Date();
-  console.log(date);
-  //var dateStr = JSON.parse(d);
-  var dateSIM = new Date(d);
-  console.log(dateSIM);
-  return dateSIM > date ? '#800026' :
-         dateSIM < date ? '#FEB24C' :
-                    '#FFFFFF';
+  var date_fv_SIM = new Date(d);
+  var date1m = new Date(date.setMonth(date.getMonth()+1));
+  return date_fv_SIM > date1m ? '#3eeb1f' :
+         date_fv_SIM < date ? '#eb1f3e' :
+         date1m > date_fv_SIM < date ? '#e99813' :
+         '#a6aaab';
 }
+
 //filtering network
 function network_filter(feature) {
   if (feature.properties.nom_ao != "Conseil Régional Grand Est") return true
