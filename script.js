@@ -31,9 +31,9 @@ function getColor(d) {
   var date_fv_SIM = new Date(d);
   var date1m = new Date(date.setMonth(date.getMonth()+2));
   return date_fv_SIM > date1m ? '#83e60b' :
-         date_fv_SIM < date1m ? '#e6aa0b' :
+         date < date_fv_SIM < date1m ? '#e6aa0b' :
       //   date1m > date_fv_SIM < date ? '#e99813' :
-         '#eb1f3e';
+         date_fv_SIM < date ?'#eb1f3e';
 }
 
 //filtering network
@@ -106,8 +106,8 @@ info.addTo(map);
 var legend = L.control({position: 'bottomright'});
 legend.onAdd = function (map) {
   var div = L.DomUtil.create('div', 'info legend'),
-    grades = [0, 30, 50, 100, 200, 500, 1000, 5000],
-    labels = [],
+    grades = [0, 30, 50],
+    labels = ['ok', '2mois', 'nodata'],
     from, to;
   for (var i = 0; i < grades.length; i++) {
     from = grades[i];
