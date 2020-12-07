@@ -29,6 +29,7 @@ $.getJSON("https://www.geograndest.fr/geoserver/region-grand-est/ows?service=WFS
 function getColor(d) {
   var date = new Date();
   var date_fv_SIM = new Date(d);
+  console.log(d);
   console.log(date);
   console.log(date_fv_SIM);
 //  var date1m = new Date(date.setMonth(date.getMonth()+2));
