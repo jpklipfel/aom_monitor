@@ -31,8 +31,8 @@ function getColor(d) {
   var date_fv_SIM = new Date(d);
 //  var date1m = new Date(date.setMonth(date.getMonth()+2));
  // var nodata = checkNull(d);
-  return date_fv_SIM > date ? '#83e60b' :
-         date_fv_SIM < date ? '#e6220b' :
+  return date_fv_SIM > date ? '#83e60b':
+         date_fv_SIM < date ? '#e6220b':
       //   nodata == '--' ? '#e6220b':
       //   date1m > date_fv_SIM < date ? '#e99813' :
       //   date_fv_SIM < date ? '#eb1f3e':
