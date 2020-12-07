@@ -29,7 +29,7 @@ $.getJSON("https://www.geograndest.fr/geoserver/region-grand-est/ows?service=WFS
 function getColor(d) {
   var date = new Date();
   var d_worked = d.substr(9,2),d.substr(6, 2),d.substr(1, 4);
-  var date_fv_SIM = new Date(d_worked));
+  var date_fv_SIM = new Date(d_worked);
   console.log(d);
   console.log(date);
   console.log(d_worked);
