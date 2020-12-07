@@ -27,14 +27,10 @@ $.getJSON("https://www.geograndest.fr/geoserver/region-grand-est/ows?service=WFS
 // Edit ranges and colors to match your data; see http://colorbrewer.org
 // Any values not listed in the ranges below displays as the last color
 function getColor(d) {
-  var date = new Date();
-  if (d == null) { return d_worked = "01/01/1970";
-  } else {d_worked = d.substr(9, 2), d.substr(1, 4)};
-          
-  var date_fv_SIM = new Date(d_worked);
+  var date = new Date();          
+  var date_fv_SIM = new Date(d);
   console.log(d);
   console.log(date);
-  console.log(d_worked);
   console.log(date_fv_SIM);
 //  var date1m = new Date(date.setMonth(date.getMonth()+2));
  // var nodata = checkNull(d);
