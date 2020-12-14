@@ -32,7 +32,9 @@ function getColor(d) {
     else {var date_fv_SIM = new Date(d);};
   if (d !== null) {console.log(d.replace('Z', ''))};
   var date1m = new Date(date.setMonth(date.getMonth()+1));
- // var nodata = checkNull(d);
+  console.log(date1m);
+  console.log(date);
+  console.log(date_fv_SIM);
   return date_fv_SIM > date1m ? '#83e60b':
          date_fv_SIM < date ? '#e6220b':
          date1m > date_fv_SIM > date ? '#e99813' :
