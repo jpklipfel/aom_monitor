@@ -28,9 +28,10 @@ $.getJSON("https://www.geograndest.fr/geoserver/region-grand-est/ows?service=WFS
 // Any values not listed in the ranges below displays as the last color
 function getColor(d) {
   var date = new Date();
+  var date2 = new Date();
   if(d !== null) {var date_fv_SIM = new Date(d.replace('Z', ''));}
     else {var date_fv_SIM = new Date(d);};
-  var date1m = new Date(date.setMonth(date.getMonth()+1));
+  var date1m = new Date(date2.setMonth(date2.getMonth()+1));
   console.log(date1m);
   console.log(date);
   console.log(date_fv_SIM);
