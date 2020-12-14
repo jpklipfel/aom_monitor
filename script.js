@@ -31,14 +31,11 @@ function getColor(d) {
   if(d !== null) {var date_fv_SIM = new Date(d.replace('Z', ''));}
     else {var date_fv_SIM = new Date(d);};
   if (d !== null) {console.log(d.replace('Z', ''))};
-  console.log(date);
-  console.log(date_fv_SIM);
-//  var date1m = new Date(date.setMonth(date.getMonth()+2));
+  var date1m = new Date(date.setMonth(date.getMonth()+1));
  // var nodata = checkNull(d);
-  return date_fv_SIM > date ? '#83e60b':
+  return date_fv_SIM > date1m ? '#83e60b':
          date_fv_SIM < date ? '#e6220b':
-      //   nodata == '--' ? '#e6220b':
-      //   date1m > date_fv_SIM < date ? '#e99813' :
+         date1m > date_fv_SIM > date ? '#e99813' :
       //   date_fv_SIM < date ? '#eb1f3e':
                               '#8f9695';
 }
