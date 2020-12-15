@@ -37,10 +37,10 @@ function getColor(d) {
   console.log(date_fv_SIM);
   console.log("next");
   return date_fv_SIM > date1m ? '#83e60b':
-         date_fv_SIM < date ? '#e6220b':
+         date_fv_SIM > '1980-01-01' && date_fv_SIM < date ? '#e6220b':
          date1m >= date_fv_SIM && date_fv_SIM >= date ? '#eb1f3e' :
       //   date_fv_SIM < date ? '#eb1f3e':
-                              '#d57a18';
+                              '#a3a79d';
 }
 
 //filtering network
