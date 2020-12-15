@@ -29,16 +29,18 @@ $.getJSON("https://www.geograndest.fr/geoserver/region-grand-est/ows?service=WFS
 function getColor(d) {
   var date = new Date();
   var date2 = new Date();
+  var date3 = new Date();
   if(d !== null) {var date_fv_SIM = new Date(d.replace('Z', ''));}
     else {var date_fv_SIM = new Date(d);};
   var date1m = new Date(date2.setMonth(date2.getMonth()+1));
+  var date_orig = new Date(date3.setMonth(date3.getMonth()-10));
   console.log(date1m);
   console.log(date);
   console.log(date_fv_SIM);
   console.log("next");
   return date_fv_SIM > date1m ? '#83e60b':
-         date_fv_SIM > '1980-01-01' && date_fv_SIM < date ? '#e6220b':
-         date1m >= date_fv_SIM && date_fv_SIM >= date ? '#eb1f3e' :
+         date1m >= date_fv_SIM && date_fv_SIM >= date ? '#e9ce4a' :
+         date_fv_SIM > date_orig && date_fv_SIM < date ? '#eb1f3e':     
       //   date_fv_SIM < date ? '#eb1f3e':
                               '#a3a79d';
 }
