@@ -38,7 +38,7 @@ function getColor(d) {
   console.log("next");
   return date_fv_SIM > date1m ? '#83e60b':
          date_fv_SIM < date ? '#e6220b':
-       //  date1m > date_fv_SIM > date ? '#d57a18' :
+         date1m >= date_fv_SIM && date_fv_SIM >= date ? '#eb1f3e' :
       //   date_fv_SIM < date ? '#eb1f3e':
                               '#d57a18';
 }
